@@ -13,7 +13,7 @@ var getRandomRestaurant = function(){
 
 };
 
-app.post('/add', function(req, res){
+app.get('/add', function(req, res){
 
   var query = req.query;
   var restaurant = query.restaurant;
@@ -22,7 +22,7 @@ app.post('/add', function(req, res){
     res.status(400).json('Give me a restaurant to add!');
   else
   {
-    if(restaurant.indexOf(restaurant) > -1)
+    if(restaurants.indexOf(restaurant) > -1)
     {
       res.status(400).json('Already in list!');
     }
@@ -35,7 +35,7 @@ app.post('/add', function(req, res){
 
 });
 
-app.post('/remove', function(req, res){
+app.get('/remove', function(req, res){
   var query = req.query;
   var restaurant = query.restaurant;
   if(!restaurant)
