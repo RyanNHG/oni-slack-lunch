@@ -13,6 +13,12 @@ var getRandomRestaurant = function(){
 
 };
 
+app.get('/list', function(req, res){
+
+  res.status(200).json(restaurants);
+
+});
+
 app.get('/add', function(req, res){
 
   var query = req.query;
